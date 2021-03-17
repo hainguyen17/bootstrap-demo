@@ -2,13 +2,8 @@ import React from 'react';
 import {Navbar, Nav, Form, Button, FormControl } from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
 
-class HeaderComponent extends React.Component {
-
-    render(){
-        return(
-           <div>
-             <>
-  <Navbar bg="dark" variant="dark">
+export const Header = () => (
+  <Navbar bg="dark" variant="dark" className="mb-2">
     <Navbar.Brand href="/">Navbar</Navbar.Brand>
     <Nav className="mr-auto">
     <LinkContainer to="/signup">
@@ -23,13 +18,4 @@ class HeaderComponent extends React.Component {
       <Button variant="outline-info">Search</Button>
     </Form>
   </Navbar>
-</>
- </div>
-           
-        )
-    }
-}
-
-
-
-export default HeaderComponent;
+);

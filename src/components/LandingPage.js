@@ -1,12 +1,17 @@
 import React from 'react'
-import { Container, Jumbotron, Button } from 'react-bootstrap';
+import { Jumbotron, Button } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 
-export const LandingPage = () => (
-    <Container fluid>
+export const LandingPage = () => {
+    const history = useHistory();
+
+    return (
         <Jumbotron>
             <h1>React-Bootstrap Demo</h1>
             <p>By Tiffany Nguyen and Ruhee Shrestha</p>
-            <Button>Get started</Button>
+            <Button onClick={() => history.push('/signup')}>
+                Get Started
+            </Button>
         </Jumbotron>
-    </Container>
-);
+    );
+};
