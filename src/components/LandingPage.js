@@ -9,7 +9,7 @@ export const LandingPage = () => {
         <Jumbotron>
             <h1>React-Bootstrap Demo</h1>
             <p>By Tiffany Nguyen and Ruhee Shrestha</p>
-            <Button onClick={() => history.push('/signup')}>
+            <Button onClick={() => history.push('/layout')}>
                 Get Started
             </Button>
         </Jumbotron>

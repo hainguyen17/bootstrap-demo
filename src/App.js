@@ -7,6 +7,7 @@ import { LandingPage } from './components/LandingPage';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
+import { LayoutPage } from './components/Layout';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       }}>
         <Switch>
           <Route path="/" component={LandingPage} exact={true} />
+          <Route path="/layout" component={LayoutPage}/>
           <Route path="/signUp"component={signUpPage} />
           <Route path="/login" component={Login} />
         </Switch>
