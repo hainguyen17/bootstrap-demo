@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Bootstrap-demo, Created by Tiffany Nguyen and Ruhee Shrestha
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
