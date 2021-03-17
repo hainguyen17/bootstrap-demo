@@ -6,20 +6,22 @@ import Login from './components/Login';
 import HomePage from './components/HomePage';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 
 function App() {
   return (
     <div className="App">
 <BrowserRouter>
-      <div className="container">
+        <Container>
         <HeaderComponent />
+        <br />
         <Switch>
           <Route path="/home" component={HomePage} exact={true} />
           <Route path="/signUp"component={signUpPage} />
           <Route path="/login" component={Login} />
         </Switch>
-      </div>
-    </BrowserRouter>      
+        </Container>
+      </BrowserRouter>      
     </div>
   );
 }
