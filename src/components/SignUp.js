@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Card, InputGroup, Form, Button} from 'react-bootstrap';
+import { Row, Col, Card, InputGroup, Form, Button } from 'react-bootstrap';
 import { BootstrapModal } from './BootstrapModal';
 
 const defaultState = {
@@ -38,62 +38,72 @@ const SignUpForm = () => {
         </Card.Title>
         <Card.Body>
           <Form noValidate validated={validated} onSubmit={handleSubmit}>
-          <Form.Group controlId="validationCustom01">
-            <Form.Label>First name</Form.Label>
-            <Form.Control
-              required
-              type="text"
-              placeholder="First name"
-              value={formValues.first}
-              onChange={onChange('first')}
-            />
-            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-          </Form.Group>
-          <Form.Group controlId="validationCustom02">
-            <Form.Label>Last name</Form.Label>
-            <Form.Control
-              required
-              type="text"
-              placeholder="Last name"
-              value={formValues.last}
-              onChange={onChange('last')}
-            />
-            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-          </Form.Group>
-          <Form.Group controlId="validationCustomUsername">
-            <Form.Label>Username</Form.Label>
-            <InputGroup hasValidation>
-              <InputGroup.Prepend>
-                <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
-              </InputGroup.Prepend>
+            <Row>
+              <Form.Group
+                as={Col}
+                md={6}
+                controlId="validationCustom01"
+              >
+                <Form.Label>First name</Form.Label>
+                <Form.Control
+                  required
+                  type="text"
+                  placeholder="First name"
+                  value={formValues.first}
+                  onChange={onChange('first')}
+                />
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              </Form.Group>
+              <Form.Group 
+                as={Col}
+                md={6}
+                controlId="validationCustom02"
+              >
+                <Form.Label>Last name</Form.Label>
+                <Form.Control
+                  required
+                  type="text"
+                  placeholder="Last name"
+                  value={formValues.last}
+                  onChange={onChange('last')}
+                />
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              </Form.Group>
+            </Row>
+            <Form.Group controlId="validationCustomUsername">
+              <Form.Label>Username</Form.Label>
+              <InputGroup hasValidation>
+                <InputGroup.Prepend>
+                  <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
+                </InputGroup.Prepend>
+                <Form.Control
+                  type="text"
+                  placeholder="Username"
+                  aria-describedby="inputGroupPrepend"
+                  required
+                  value={formValues.username}
+                  onChange={onChange('username')}
+                />
+                <Form.Control.Feedback type="invalid">
+                  Please choose a username.
+                </Form.Control.Feedback>
+              </InputGroup>
+            </Form.Group>
+            <Form.Group>
+              <Form.Label htmlFor="inputPassword6">Password</Form.Label>
               <Form.Control
-                type="text"
-                placeholder="Username"
-                aria-describedby="inputGroupPrepend"
+                type="password"
+                id="inputPassword6"
+                aria-describedby="passwordHelpInline"
                 required
-                value={formValues.username}
-                onChange={onChange('username')}
+                value={formValues.password}
+                onChange={onChange('password')}
               />
-              <Form.Control.Feedback type="invalid">
-                Please choose a username.
-              </Form.Control.Feedback>
-            </InputGroup>
-          </Form.Group>
-          <Form.Group>
-            <Form.Label htmlFor="inputPassword6">Password</Form.Label>
-            <Form.Control
-              type="password"
-              id="inputPassword6"
-              aria-describedby="passwordHelpInline"
-              required
-              value={formValues.password}
-              onChange={onChange('password')}
-            />
-            <Form.Text id="passwordHelpInline" muted>
-              Must be 8-20 characters long.
-            </Form.Text>
-          </Form.Group>
-          <Button type="submit">Submit form</Button>
+              <Form.Text id="passwordHelpInline" muted>
+                Must be 8-20 characters long.
+              </Form.Text>
+            </Form.Group>
+            <Button type="submit">Submit form</Button>
           </Form>
         </Card.Body>
       </Card>
