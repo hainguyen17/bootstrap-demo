@@ -8,7 +8,7 @@ export const Header = () => {
 
   return (
     <Navbar bg="dark" variant="dark" className="mb-2">
-      <Navbar.Brand href="/">Navbar</Navbar.Brand>
+      <Navbar.Brand onClick={() => history.push('/')}>Navbar</Navbar.Brand>
       <Nav className="mr-auto">
           <Nav.Link
             active={pathname === '/layout'}

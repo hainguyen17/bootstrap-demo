@@ -19,7 +19,7 @@ function App() {
         <Switch>
           <Route path="/" component={LandingPage} exact={true} />
           <Route path="/layout" component={LayoutPage}/>
-          <Route path="/signUp"component={signUpPage} />
+          <Route path="/signup"component={signUpPage} />
           <Route path="/login" component={Login} />
         </Switch>
       </Container>
