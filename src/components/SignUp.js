@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Card, InputGroup, Form, Button} from 'react-bootstrap';
+import {Col, Card, InputGroup, Form, Button} from 'react-bootstrap';
 
 function SignUpForm(){
     const [validated, setValidated] = useState(false);
@@ -16,13 +16,15 @@ function SignUpForm(){
         
         return (
     <div>
-        <Card style={{ width: '30rem' }}>
+        <Card style={{ width: '30rem' }} >
+        {/* <Card md={8}> */}
             <Card.Title>
                 Sign Up
             </Card.Title>
             <Card.Body>
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
-        <Form.Group md="4" controlId="validationCustom01">
+          <Form.Row>
+          <Form.Group as={Col} controlId="validationCustom01">
           <Form.Label>First name</Form.Label>
           <Form.Control
             required
@@ -32,18 +34,19 @@ function SignUpForm(){
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
-        <Form.Group md="4" controlId="validationCustom02">
+       
+        <Form.Group controlId="validationCustom02">
           <Form.Label>Last name</Form.Label>
           <Form.Control
             required
             type="text"
             placeholder="Last name"
-            defaultValue="Shrestha"
+            defaultValue="S"
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
-        <br />
-        <Form.Group md="4" controlId="validationCustomUsername">
+        </Form.Row>
+        <Form.Group controlId="validationCustomUsername">
           <Form.Label>Username</Form.Label>
           <InputGroup hasValidation>
             <InputGroup.Prepend>
@@ -60,12 +63,10 @@ function SignUpForm(){
             </Form.Control.Feedback>
           </InputGroup>
         </Form.Group>
-        <br />
         <Form.Group>
-        <Form.Label htmlFor="inputPassword6">Password</Form.Label>
+      <Form.Label htmlFor="inputPassword6">Password</Form.Label>
          <Form.Control
       type="password"
-      className="mx-sm-3"
       id="inputPassword6"
       aria-describedby="passwordHelpInline"
     />
